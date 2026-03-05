@@ -1,0 +1,28 @@
+/* Floating tooltip */
+.float-tooltip {
+    position: absolute;
+    right: calc(100% + 0.6rem);
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 23, 42, 0.9);
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-full);
+    pointer-events: none;
+    animation: fadeIn 0.2s ease;
+}
+
+.float-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite;
+    pointer-events: none;
+}
+
+.float-ring-wa {
+    border: 2px solid #25d366;
+}

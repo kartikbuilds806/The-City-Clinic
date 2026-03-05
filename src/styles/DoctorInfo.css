@@ -1,0 +1,184 @@
+.doctor-info {
+    background: var(--gray-50);
+}
+
+.doctor-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.doc-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.doc-highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.75rem 1rem;
+    background: white;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--gray-100);
+    transition: var(--transition);
+}
+
+.doc-highlight:hover {
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+.dh-icon {
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.dh-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+/* Doctor Card */
+.doc-card {
+    background: white;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-100);
+    margin-bottom: 1.2rem;
+}
+
+.doc-avatar {
+    height: 180px;
+    background: linear-gradient(135deg, var(--primary-light), var(--teal-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: relative;
+}
+
+.doc-card-body {
+    padding: 1.5rem;
+}
+
+.doc-badge-chips {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.chip {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.chip-blue {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.chip-teal {
+    background: var(--teal-light);
+    color: var(--teal);
+}
+
+.doc-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.2rem;
+}
+
+.doc-designation {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+}
+
+.doc-divider {
+    height: 1px;
+    background: var(--gray-100);
+    margin: 1rem 0;
+}
+
+.doc-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.doc-meta-item {
+    text-align: center;
+    flex: 1;
+}
+
+.dm-val {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+.dm-label {
+    font-size: 0.72rem;
+    color: var(--gray-500);
+    margin-top: 0.15rem;
+}
+
+.doc-meta-sep {
+    width: 1px;
+    height: 36px;
+    background: var(--gray-200);
+}
+
+.doc-features-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+}
+
+.doc-feat-item {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 0.85rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    border: 1px solid var(--gray-100);
+    transition: var(--transition);
+}
+
+.doc-feat-item:hover {
+    border-color: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+@media (max-width: 900px) {
+    .doctor-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .doc-highlights {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .doc-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .doc-features-list {
+        grid-template-columns: 1fr;
+    }
+}

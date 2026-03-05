@@ -1,0 +1,185 @@
+.appointment {
+    background: linear-gradient(135deg, #0c1445 0%, #0a3d6b 40%, #0d9488 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.appointment::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(14, 165, 233, 0.2), transparent 60%);
+    pointer-events: none;
+}
+
+.appt-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+.appt-info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.appt-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    backdrop-filter: blur(10px);
+}
+
+.aii-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.aii-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+}
+
+.aii-val {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 500;
+}
+
+/* Form Card */
+.appt-form-wrap {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-xl);
+}
+
+.form-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--gray-100);
+}
+
+.appt-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: var(--primary);
+}
+
+.input-error {
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+.err-msg {
+    font-size: 0.75rem;
+    color: #dc2626;
+    font-weight: 500;
+}
+
+.appt-submit {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.appt-note {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    text-align: center;
+    margin-top: -0.25rem;
+}
+
+/* Success State */
+.appt-success {
+    background: linear-gradient(135deg, #dcfce7, #d1fae5);
+    border: 2px solid #bbf7d0;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.4s ease;
+}
+
+.success-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.appt-success h3 {
+    color: #15803d;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.appt-success p {
+    color: #166534;
+    font-size: 0.85rem;
+}
+
+.appt-profile-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-decoration: none;
+    background: white;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--primary-light);
+    transition: var(--transition);
+}
+
+.appt-profile-link:hover {
+    background: var(--primary-light);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+    .appt-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .appt-form-wrap {
+        padding: 1.5rem;
+    }
+}

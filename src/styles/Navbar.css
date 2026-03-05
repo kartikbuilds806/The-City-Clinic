@@ -1,0 +1,431 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    padding: 1rem 0;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 2px 20px rgba(14, 165, 233, 0.1);
+    padding: 0.7rem 0;
+}
+
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--primary), var(--teal));
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-main {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.logo-sub {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.navbar.scrolled .logo-main {
+    color: var(--gray-900);
+}
+
+/* Make logo text white when navbar is transparent (on hero) */
+.navbar:not(.scrolled) .logo-main {
+    color: var(--white);
+}
+
+.navbar:not(.scrolled) .logo-sub {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white);
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar.scrolled .nav-link {
+    color: var(--gray-700);
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+}
+
+.navbar.scrolled .nav-link:hover {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.nav-auth-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+/* Hide mobile auth links on desktop — nav-right handles this */
+@media (min-width: 901px) {
+    .nav-auth-links {
+        display: none;
+    }
+}
+
+
+.nav-cta {
+    padding: 0.5rem 1.2rem !important;
+    font-size: 0.85rem !important;
+}
+
+/* ─── Desktop nav right area ───────────── */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.nav-auth-desktop {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-login-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.navbar.scrolled .nav-login-link {
+    color: var(--gray-700) !important;
+}
+
+/* ─── User Avatar Button ───────────────── */
+.user-avatar-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--radius-full);
+    padding: 0.35rem 0.85rem 0.35rem 0.4rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-sans);
+}
+
+.navbar.scrolled .user-avatar-btn {
+    background: var(--primary-light);
+    border-color: rgba(14, 165, 233, 0.25);
+}
+
+.user-avatar-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.nav-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--teal));
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.nav-username {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.navbar.scrolled .nav-username {
+    color: var(--gray-900);
+}
+
+.nav-chevron {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.75);
+    transition: transform 0.25s ease;
+}
+
+.navbar.scrolled .nav-chevron {
+    color: var(--gray-500);
+}
+
+.nav-chevron.open {
+    transform: rotate(180deg);
+}
+
+/* ─── User Dropdown ─────────────────────── */
+.user-menu-wrap {
+    position: relative;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: calc(100% + 0.7rem);
+    right: 0;
+    width: 230px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--gray-100);
+    z-index: 999;
+    animation: fadeInUp 0.2s ease;
+    overflow: hidden;
+}
+
+.ud-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.1rem;
+    background: var(--gray-50);
+}
+
+.ud-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--teal));
+    color: white;
+    font-size: 0.88rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ud-name {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+}
+
+.ud-email {
+    font-size: 0.72rem;
+    color: var(--gray-500);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+}
+
+.ud-divider {
+    height: 1px;
+    background: var(--gray-100);
+}
+
+.ud-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.75rem 1.1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 100%;
+    font-family: var(--font-sans);
+    text-align: left;
+}
+
+.ud-item:hover {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.ud-logout {
+    color: #dc2626;
+}
+
+.ud-logout:hover {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+.nav-phone {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.navbar.scrolled .nav-phone {
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+.nav-phone:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: var(--white);
+    padding: 0.4rem;
+    z-index: 1001;
+}
+
+.navbar.scrolled .hamburger {
+    color: var(--gray-900);
+}
+
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 899;
+}
+
+@media (max-width: 900px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-phone span {
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5rem 1.5rem 2rem;
+        gap: 0.25rem;
+        transition: right 0.3s ease;
+        z-index: 900;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+        overflow-y: auto;
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .nav-link {
+        color: var(--gray-700) !important;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+
+    .nav-auth-links {
+        margin-left: 0;
+        margin-top: 1rem;
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .nav-auth-links .nav-link {
+        text-align: center;
+    }
+
+    .nav-cta {
+        width: 100%;
+        justify-content: center;
+        padding: 0.75rem 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-phone {
+        display: none;
+    }
+}
