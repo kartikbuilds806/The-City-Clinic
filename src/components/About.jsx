@@ -1,5 +1,6 @@
 import { FaShieldAlt, FaMicroscope, FaUserMd, FaAward, FaHeart } from 'react-icons/fa'
 import '../styles/About.css'
+import clinicPhoto from '../assets/unnamed.webp'
 
 const features = [
     { icon: <FaShieldAlt />, title: 'Sterile & Safe', desc: 'We follow strict sterilization protocols for all instruments and surfaces.' },
@@ -16,7 +17,11 @@ export default function About() {
                     <div className="about-visual">
                         <div className="about-img-wrap">
                             <div className="about-img-placeholder">
-                                <div className="about-img-icon">🦷</div>
+                                <img
+                                    src={clinicPhoto}
+                                    alt="City Dental Clinic"
+                                    className="about-real-img"
+                                />
                                 <div className="about-img-pill">Since 2013</div>
                             </div>
                             <div className="about-stat-card">
