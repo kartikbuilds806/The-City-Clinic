@@ -1,6 +1,6 @@
 import { FaShieldAlt, FaMicroscope, FaUserMd, FaAward, FaHeart } from 'react-icons/fa'
 import '../styles/About.css'
-import clinicPhoto from '../assets/unnamed.webp'
+import clinicPhoto from '../assets/frontdoor.webp'
 
 const features = [
     { icon: <FaShieldAlt />, title: 'Sterile & Safe', desc: 'We follow strict sterilization protocols for all instruments and surfaces.' },

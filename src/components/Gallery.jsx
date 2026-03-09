@@ -1,25 +1,19 @@
 import '../styles/Gallery.css'
 
-import img1 from '../assets/2023-11-23 (1).webp'
-import img2 from '../assets/2023-12-23.webp'
-import img3 from '../assets/2023-12-25.webp'
-import img4 from '../assets/2025-09-24.webp'
-import img5 from '../assets/B8CC169A-7491-47A7-BD25-D264B0332A83.webp'
-import img6 from '../assets/C31A0C61-3247-4DBD-9614-880655FA9BEE.webp'
-import img7 from '../assets/unnamed (1).webp'
-import img8 from '../assets/unnamed (2).webp'
-import img9 from '../assets/unnamed.webp'
+import img1 from '../assets/reception.webp'
+import img2 from '../assets/waiting-area.webp'
+import img3 from '../assets/treatment.webp'
+import img4 from '../assets/treatment-room2.webp'
+import img5 from '../assets/laserunit.webp'
+import img6 from '../assets/balconyarea.webp'
 
 const galleryItems = [
-    { img: img1, label: 'Clinic Interior',    desc: 'Welcoming & comfortable environment' },
-    { img: img2, label: 'Treatment Room',     desc: 'Modern dental equipment' },
-    { img: img3, label: 'Sterilization Unit', desc: 'Latest autoclave sterilization' },
-    { img: img4, label: 'Laser Unit',         desc: 'Advanced laser dentistry' },
-    { img: img5, label: 'Patient Smiles',     desc: 'Beautiful smile transformations' },
-    { img: img6, label: 'Consultation',       desc: 'Personalized dental consultations' },
-    { img: img7, label: 'Teeth Whitening',    desc: 'Professional whitening results' },
-    { img: img8, label: 'Our Team',           desc: 'Dedicated dental professionals' },
-    { img: img9, label: 'Reception Area',     desc: 'Clean & hygienic reception' },
+    { img: img1, label: 'Reception Area',     desc: 'Clean & hygienic reception' },
+    { img: img2, label: 'Waiting Area',       desc: 'Comfortable waiting lounge' },
+    { img: img3, label: 'Treatment Room',     desc: 'Modern dental equipment' },
+    { img: img4, label: 'Treatment Chair',    desc: 'Advanced patient chair' },
+    { img: img5, label: 'Laser Unit',         desc: 'Latest laser technology' },
+    { img: img6, label: 'Balcony Area',       desc: 'Relaxing outdoor view' },
 ]
 
 export default function Gallery() {
