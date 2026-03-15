@@ -22,7 +22,7 @@ export default function About() {
                                     alt="City Dental Clinic"
                                     className="about-real-img"
                                 />
-                                <div className="about-img-pill">Since 2013</div>
+                                <div className="about-img-pill">Since 2017</div>
                             </div>
                             <div className="about-stat-card">
                                 <div className="asc-value">5,000<span>+</span></div>
