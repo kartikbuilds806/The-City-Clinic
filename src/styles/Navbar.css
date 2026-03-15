@@ -124,7 +124,7 @@
 }
 
 /* Hide mobile auth links on desktop — nav-right handles this */
-@media (min-width: 901px) {
+@media (min-width: 769px) {
     .nav-auth-links {
         display: none;
     }
@@ -368,9 +368,14 @@
     z-index: 899;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .hamburger {
         display: flex;
+    }
+
+    .nav-auth-desktop,
+    .user-menu-wrap {
+        display: none;
     }
 
     .nav-phone span {
